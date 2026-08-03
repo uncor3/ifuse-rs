@@ -24,6 +24,7 @@ use winfsp::{
     FspError,
     filesystem::{
         DirInfo, DirMarker, FileInfo, FileSecurity, FileSystemContext, OpenFileInfo, VolumeInfo,
+        WideNameInfo,
     },
 };
 
