@@ -1,5 +1,5 @@
 [package]
-name = "ifuse-rs"
+name = "ifuse"
 version = "0.1.0"
 edition = "2024"
 license = "GPL-3.0-or-later"
@@ -9,7 +9,7 @@ keywords = ["ifuse", "ios", "apple", "winfsp", "fuse"]
 authors = ["uncor3 <github.com/uncor3>"]
 
 [lib]
-name = "ifuse_rs"
+name = "ifuse"
 path = "src/lib.rs"
 
 [[bin]]

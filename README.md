@@ -59,7 +59,7 @@ enable the matching provider:
 OpenSSL may be required because rustls which `idevice` uses by default doesn't support old SSL/TLS protocols.
 
 ```toml
-ifuse-rs = { version = "0.1.0", default-features = false, features = ["openssl"] }
+ifuse = { version = "0.1.0", default-features = false, features = ["openssl"] }
 ```
 
 ## Platform support and license

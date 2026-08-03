@@ -4,7 +4,7 @@ compile_error!("ifuse-rs only supports Linux and Windows");
 use std::{path::PathBuf, process::ExitCode, time::Duration};
 
 use clap::{ArgAction, Parser};
-use ifuse_rs::{DeviceTarget, IfuseBuilder, MountSource, list_apps};
+use ifuse::{DeviceTarget, IfuseBuilder, MountSource, list_apps};
 
 #[derive(Debug, Parser)]
 #[command(

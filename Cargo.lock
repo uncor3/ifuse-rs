@@ -542,7 +542,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "ifuse-rs"
+name = "ifuse"
 version = "0.1.0"
 dependencies = [
  "clap",
