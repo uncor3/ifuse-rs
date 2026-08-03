@@ -36,5 +36,5 @@ libc = "0.2"
 [target.'cfg(target_os = "windows")'.dependencies]
 widestring = "1"
 windows = { version = "0.61.1", features = ["Win32_Foundation", "Win32_Storage_FileSystem"] }
-winfsp = { git = "https://github.com/uncor3/winfsp-rs.git", rev = "23a582913c70f3addc6102344dc9cd539b2bfbe7", default-features = false }
-winfsp-sys = { git = "https://github.com/uncor3/winfsp-rs.git", rev = "23a582913c70f3addc6102344dc9cd539b2bfbe7" }
+winfsp = { version = "0.13", default-features = false }
+winfsp-sys = "0.12"
