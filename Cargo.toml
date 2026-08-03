@@ -4,6 +4,9 @@ version = "0.1.0"
 edition = "2024"
 license = "GPL-3.0-or-later"
 description = "Cross-platform filesystem mounts for accessing iOS devices"
+repository = "https://github.com/uncor3/ifuse-rs"
+keywords = ["ifuse", "ios", "apple", "winfsp", "fuse"]
+authors = ["uncor3 <github.com/uncor3>"]
 
 [lib]
 name = "ifuse_rs"
