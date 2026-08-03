@@ -1,0 +1,40 @@
+[package]
+name = "ifuse-rs"
+version = "0.1.0"
+edition = "2024"
+license = "GPL-3.0-or-later"
+description = "Cross-platform filesystem mounts for accessing iOS devices"
+
+[lib]
+name = "ifuse_rs"
+path = "src/lib.rs"
+
+[[bin]]
+name = "ifuse-rs"
+path = "src/main.rs"
+required-features = ["bin"]
+
+[features]
+default = ["bin", "ring"]
+bin = ["dep:clap", "dep:tracing-subscriber", "tokio/signal", "tokio/time", "tokio/macros"]
+ring = ["idevice/ring"]
+openssl = ["idevice/openssl"]
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"], optional = true }
+idevice = { version = "=0.1.65", default-features = false, features = ["afc", "usbmuxd", "tcp", "house_arrest", "installation_proxy"] }
+plist = "1.8"
+thiserror = "2"
+tokio = { version = "1.47", features = ["io-util", "rt", "sync"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"], optional = true }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+fuser = "=0.18.0"
+libc = "0.2"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+widestring = "1"
+windows = { version = "0.61.1", features = ["Win32_Foundation", "Win32_Storage_FileSystem"] }
+winfsp = { git = "https://github.com/uncor3/winfsp-rs.git", rev = "23a582913c70f3addc6102344dc9cd539b2bfbe7", default-features = false }
+winfsp-sys = { git = "https://github.com/uncor3/winfsp-rs.git", rev = "23a582913c70f3addc6102344dc9cd539b2bfbe7" }
