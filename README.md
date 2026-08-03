@@ -56,8 +56,10 @@ with a pairing file. `MountHandle` is cloneable, and unmounting is idempotent.
 Consumers that already select OpenSSL for `idevice` can disable defaults and
 enable the matching provider:
 
+OpenSSL may be required because rustls which `idevice` uses by default doesn't support old SSL/TLS protocols.
+
 ```toml
-ifuse-rs = { path = "../ifuse-rs", default-features = false, features = ["openssl"] }
+ifuse-rs = { version = "0.1.0", default-features = false, features = ["openssl"] }
 ```
 
 ## Platform support and license
